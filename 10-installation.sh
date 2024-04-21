@@ -1,13 +1,33 @@
 #!/bin/bash
 
-# Install the MySQL repository package
-sudo dnf install -y https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+USERID=$(id -u)
 
-# Install MySQL server and client
-sudo dnf install -y mysql-community-server mysql-community-client
+if [ $USERID -ne 0 ]
+then
+    echo "Please run this script with root access."
+    exit 1 # manually exit if error comes.
+else
+    echo "You are super user."
+fi
 
-# Start the MySQL service
-sudo systemctl start mysqld
+dnf install mysql -y
 
-# Secure MySQL installation (optional)
-sudo mysql_secure_installation
+if [ $? -ne 0 ]
+then
+    echo "Installation of mysql...FAILURE"
+    exit 1
+else
+    echo "Installation of mysql...SUCCESS"
+fi
+
+dnf install git -y
+
+if [ $? -ne 0 ]
+then
+    echo "Installation of git...FAILURE"
+    exit 1
+else
+    echo "Installation of Git...SUCCESS"
+fi
+
+echo "is script proceeding?"
