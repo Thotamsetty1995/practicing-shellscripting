@@ -5,3 +5,4 @@
 echo "All variables $@"
 
 #here '@' means all variables. it means to print all variables
+echo "all variables passed $#"
