@@ -6,4 +6,4 @@ PERSON2=Suresh
 echo "$PERSON1:: Hello $PERSON2, How are you?"
 echo "$PERSON2:: Hello $PERSON1, Im good"
 echo "$PERSON1:: had your breakfast?"
-echo "$PERSON2:: Yes, just now I had, what about you PERSON1?" 
+echo "$PERSON2:: Yes, just now I had, what about you $PERSON1?" 
