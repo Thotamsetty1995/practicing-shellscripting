@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# this type is very Important
+
+echo "All variables $@"
+
+#here '@' means all variables. it means to print all variables
